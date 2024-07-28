@@ -1,7 +1,6 @@
 function check() {
-  var ele = document.getElementById("in").value;
+  var ele = document.getElementById("in").value.trim().toLowerCase();
   if (isNaN(ele)) {
-    var ele = document.getElementById("in").value;
     var rev = "";
     for (var i = ele.length - 1; i >= 0; i--) {
       rev += ele[i];
@@ -14,13 +13,13 @@ function check() {
         "No, " + ele + " is not a palindrome.";
     }
   } else {
-    var r = 0,
-      b;
-    for (var i = ele; i > 0; i = Math.floor(i / 10)) {
-      b = i % 10;
-      r = r * 10 + b;
+    var r = 0;
+    var num = parseInt(ele);
+    while (num > 0) {
+      r = r * 10 + (num % 10);
+      num = Math.floor(num / 10);
     }
-    if (r == ele) {
+    if (r === parseInt(ele)) {
       document.getElementById("mm").innerHTML = "Yes " + ele + " is Palindrome";
     }
   }
