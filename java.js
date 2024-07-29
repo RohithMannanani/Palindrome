@@ -1,11 +1,12 @@
 function check() {
-  var ele = document.getElementById("in").value.trim().toLowerCase();
-  if (isNaN(ele)) {
+  var ele = document.getElementById("in").value;
+  var real = ele.split(" ").join("").toLowerCase();
+  if (isNaN(real)) {
     var rev = "";
-    for (var i = ele.length - 1; i >= 0; i--) {
-      rev += ele[i];
+    for (var i = real.length - 1; i >= 0; i--) {
+      rev += real[i];
     }
-    if (ele === rev) {
+    if (real === rev) {
       document.getElementById("mm").innerHTML =
         "Yes, " + ele + " is a palindrome!";
     } else {
@@ -21,6 +22,9 @@ function check() {
     }
     if (r === parseInt(ele)) {
       document.getElementById("mm").innerHTML = "Yes " + ele + " is Palindrome";
+    } else {
+      document.getElementById("mm").innerHTML =
+        "Yes " + ele + " is not a Palindrome";
     }
   }
 }
