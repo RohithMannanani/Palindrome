@@ -24,7 +24,7 @@ function check() {
       document.getElementById("mm").innerHTML = "Yes " + ele + " is Palindrome";
     } else {
       document.getElementById("mm").innerHTML =
-        "Yes " + ele + " is not a Palindrome";
+        "NO " + ele + " is not a Palindrome";
     }
   }
 }
